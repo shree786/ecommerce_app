@@ -4,12 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :product
-  def active_for_authentication? 
-    super && approved? 
-  end 
-  
-  def inactive_message 
-    approved? ? super : :not_approved
-  end
+  has_many :product, dependent: :destroy
 end

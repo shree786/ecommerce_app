@@ -9,7 +9,13 @@ class Admin::ProductsController < ApplicationController
 
   def create
       params[:products][:user_id] = current_user.id
-      @products = products.new(products_params)
+      @products = Product.new(products_params)
+      if @product.after_save 
+        render Product
+      else
+        flash[:error] ='Can not save'
+        render 'new'
+  end
   end
 
   def edit
@@ -33,5 +39,10 @@ class Admin::ProductsController < ApplicationController
   def show
     @products = Product.find(params[:id])
   end
+
+private
+def products_params
+  params.require(:product).permit(:product_id, :product_name)
+end
 
 end
