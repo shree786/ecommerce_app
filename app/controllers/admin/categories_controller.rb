@@ -4,7 +4,10 @@ class Admin::CategorysController < ApplicationController
     @categories = Category.all
   end
   
-
+  def new
+    @category = Category.new
+  end
+  
   def create 
     @category = Category.new(product_params) 
     # @category.category_id = params[:category_id] 

@@ -33,6 +33,8 @@ default: &default
     - .woff2
 
   extensions:
+    - .elm
+    - .erb
     - .mjs
     - .js
     - .sass

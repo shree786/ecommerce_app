@@ -4,7 +4,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def new
-    @products = Product.new
+    @product = Product.new
   end
 
   def create
@@ -15,7 +15,7 @@ class Admin::ProductsController < ApplicationController
       else
         flash[:error] ='Can not save'
         render 'new'
-  end
+      end
   end
 
   def edit

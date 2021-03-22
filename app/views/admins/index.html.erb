@@ -1,0 +1,30 @@
+<h1> Admin <h1>
+
+
+<%
+=begin%>
+ <%= @users.all.map(&:attributes) %>
+<%= Product.all.map(&:attributes) %> 
+<%
+=end%>
+
+ <% @categories.each do |category| %>
+ <%= link_to category.category_name, root_path + "?category_id=#{category.id}" %><br>
+ <% end %>   
+     <table class="table table-bordered table-striped">   
+       <tr>   
+        <th>Name</th>   
+        <th>Price</th>   
+        <th>Description</th>   
+          
+      </tr>   
+       
+      <% @products.each do |product| %>   
+          <tr>   
+            <td><%= product.product_name %></td>   
+            <td><%= product.product_price %></td>   
+            <td><%= truncate(product.product_description, :length => 75) %></td>   
+           
+           </tr>   
+      <% end %>   
+    </table>

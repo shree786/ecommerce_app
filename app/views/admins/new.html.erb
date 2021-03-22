@@ -1,0 +1,19 @@
+
+<% form_for @product.each do |f| %>         
+<%= f.label :product_name %>   
+<%= f.text_field :product_name %>   
+ 
+    
+<%= f.label :product_price %>   
+<%= f.text_field :product_price %>   
+
+  
+<%= f.label :product_description %>   
+<%= f.text_field :product_description %>   
+ 
+ 
+       
+<!-- <%= link_to 'Back', { controller: 'products', action: 'index'} %> --> 
+<%= f.submit 'Create Product' %>   
+    
+  <% end %>   
