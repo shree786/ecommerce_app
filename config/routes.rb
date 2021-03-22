@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :admins do
     resources :users
+    resources :products
   end
 end

@@ -31,6 +31,6 @@ class Admin::CategorysController < ApplicationController
  private
  
  def product_params
-    params.require(:category_id)
+    params.require(:Category).permit(:category_id, :category_name)
  end
 end

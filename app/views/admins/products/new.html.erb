@@ -1,5 +1,5 @@
 
-<% form_for @product.each do |f| %>         
+<% form_for :product do |f| %>         
 <%= f.label :product_name %>   
 <%= f.text_field :product_name %>   
  
@@ -13,7 +13,6 @@
  
  
        
-<!-- <%= link_to 'Back', { controller: 'products', action: 'index'} %> --> 
 <%= f.submit 'Create Product' %>   
     
   <% end %>   
