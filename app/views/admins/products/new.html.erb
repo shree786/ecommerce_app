@@ -1,18 +1,13 @@
-
-<% form_for :product do |f| %>         
+<%= form_for @product, url: admin_products_path do |f| %>        
 <%= f.label :product_name %>   
-<%= f.text_field :product_name %>   
- 
-    
-<%= f.label :product_price %>   
-<%= f.text_field :product_price %>   
+<%= f.text_field :product_name %> 
 
-  
+<%= f.label :product_price %>   
+<%= f.text_field :product_price %> 
+
 <%= f.label :product_description %>   
 <%= f.text_field :product_description %>   
- 
- 
-       
-<%= f.submit 'Create Product' %>   
+
+<%= f.submit 'submit' %>   
     
-  <% end %>   
+<% end %>   
